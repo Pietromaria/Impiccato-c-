@@ -73,3 +73,41 @@ void personaggio(int t){
  }
 
 }
+
+
+void estraiParola(char rigain[], char parola[]){
+	int i,k,j;
+	
+	for(i=0; (i<MAX_LEN)&&(rigain[i]!='\0')&&(rigain[i]!=';'); i++);
+	
+	for(k=0 ; k<1; k++)
+		parola[k]=rigain[k];
+	parola[k]='\0';
+	
+	j=0;
+	
+	for(k=i+1; k<MAX_LEN; k++){
+		rigain[j]=rigain[k];
+		j++;
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
