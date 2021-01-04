@@ -5,6 +5,9 @@
 #include <ctime>
 using namespace std;
 
+struct recParola{
+	string parola;
+};
 
 void personaggio(int t){
 	
@@ -95,7 +98,53 @@ void estraiParola(char rigain[], char parola[]){
 	
 	
 	
+struct recParola{
+	string parola;
+};
+
+
+
+void ranWord(){
+	int i;
+	recParola arrWord[N];
+	srand(time(NULL));
 	
+	ifstream parolaCasuale;
+	parolaCasuale.open(vocitaliano.txt);
+	
+	for(i = 0; i<N; i++){
+		ranWord >> arrWord[i];
+	//	cout << arrWord[i] <<endl; //cotntrollo stampa
+	}
+	
+	int pos= rand()%N;
+	parola = arrWord[pos];
+	// cout << arrWord[pos]; //controllo stampa
+	
+	parolaCasuale.close();
+}
+
+string nascondiParola(string parola){  //parolaCens= parola censurata
+	string parolaCens(parola.lenght(),'_'); //sostituisco le lettere con _
+	cout<< parolaCens <<endl;
+}
+
+string trovaParola(string parola, string parolaCens, lettera){
+	do{
+		for(i=0; i< parolaCens.lenght(); i++){
+			if(parola[i]==lettera){
+				parolaCens[i]=lettera;
+				cout<< "Bravo, hai trovato la lettera" << lettera <<endl;
+			}
+				     
+		}
+		if(parolaCens == parola){
+			cout<<"La parola misteriosa é: "<< parola<<endl;
+			cout<< "Bravo, hai vinto il gioco trovando la parola mistriosa!!!"<<endl;
+		}
+	}
+	
+}
 	
 	
 	
